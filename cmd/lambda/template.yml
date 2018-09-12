@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Test serverless application.
+
+Resources:
+  Hello:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: sample
+      Runtime: go1.x
+      Events:
+        Hello:
+          Type: Api
+          Properties:
+            Path: /sample
+            Method: post
